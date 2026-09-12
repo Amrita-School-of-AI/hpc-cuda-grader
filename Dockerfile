@@ -1,7 +1,8 @@
 # Grading image for the CUDA items of 23AID304 on Classroom 50: the NVIDIA
-# devel image (nvcc; no GPU is needed to compile) plus the tools the autograde
+# devel image on Ubuntu 24.04 (glibc 2.39, which the runner's Python 3.14 build
+# needs; 22.04 is too old) plus the tools the autograde
 # runner requires inside a container: curl, git and the GitHub CLI.
-FROM nvidia/cuda:13.0.0-devel-ubuntu22.04
+FROM nvidia/cuda:13.0.0-devel-ubuntu24.04
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -qq \
  && apt-get install -y -qq --no-install-recommends ca-certificates curl git gnupg \
